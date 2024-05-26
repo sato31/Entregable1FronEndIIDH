@@ -37,7 +37,7 @@ function obtenerDatosDelUsuario() {
   /* --------------- PUNTO 1: Escribe tu codigo a partir de aqui --------------- */
   datosPersona.nombre = prompt("Ingresa tu nombre: ");
   while (typeof(datosPersona.nombre) != "string" || datosPersona.nombre.length < 3 || datosPersona.nombre == null ){
-    datosPersona.nombre = prompt("Nombre no válido, Ingresa un nombre con más de 2 caracteres: ")
+    datosPersona.nombre = prompt("Nombre no válido, Ingresa un nombre con más de 2 caracteres: ");
   }
   datosPersona.nombre = datosPersona.nombre[0].toUpperCase() + datosPersona.nombre.slice(1).toLowerCase();
   
@@ -45,17 +45,17 @@ function obtenerDatosDelUsuario() {
   const anioActual = hoy.getFullYear();
   let anioNacimiento = parseInt(prompt("Ingresa el año en que naciste: "));
   while (anioNacimiento < 1900 || anioNacimiento > anioActual || isNaN(anioNacimiento)){
-    anioNacimiento = prompt("Año no válido, Ingresa su año de naciemiento en formato YYYY")
+    anioNacimiento = prompt("Año no válido, Ingresa su año de naciemiento en formato YYYY");
   }
-  datosPersona.edad = anioActual - anioNacimiento
+  datosPersona.edad = anioActual - anioNacimiento;
   
-  datosPersona.ciudad = prompt("Ingresa la ciudad donde vives: ")
+  datosPersona.ciudad = prompt("Ingresa la ciudad donde vives: ");
   while (datosPersona.ciudad.length < 3 || datosPersona.ciudad == null ){
-    datosPersona.ciudad = prompt("Ciudad no válida, El nombre de la ciudad debe tener más de 2 caracteres: ")
+    datosPersona.ciudad = prompt("Ciudad no válida, El nombre de la ciudad debe tener más de 2 caracteres: ");
   }
   datosPersona.ciudad = datosPersona.ciudad[0].toUpperCase() + datosPersona.ciudad.slice(1).toLowerCase();
 
-  datosPersona.interesPorJs = confirm("¿Te interesa JavaScript?")
+  datosPersona.interesPorJs = confirm("¿Te interesa JavaScript?");
 }
 
 function renderizarDatosUsuario() {
@@ -77,13 +77,13 @@ function renderizarDatosUsuario() {
   } else {
     interesJS.innerText = "No";
   }
-  fila.innerHTML = ""
+  fila.innerHTML = "";
 }
 
 function recorrerListadoYRenderizarTarjetas() {
   /* ------------------ PUNTO 3: Escribe tu codigo desde aqui ------------------ */
-  const fila = document.querySelector("#fila")
-  fila.innerHTML = ""
+  const fila = document.querySelector("#fila");
+  fila.innerHTML = "";
   if (datosPersona.interesPorJs) {
     listado.forEach(materia => {
     fila.innerHTML += `
@@ -101,7 +101,7 @@ function recorrerListadoYRenderizarTarjetas() {
     </div>
     `
   } else{
-    alert("Complete primero los datos del developer")
+    alert("Complete primero los datos del developer");
   }
 
 }
@@ -117,9 +117,9 @@ let mostrarSobreMi = () =>  {
   const sobreMi = document.querySelector("#sobre-mi");
   document.addEventListener("keypress", (e) =>{
     if (e.code == "KeyF") {
-      sobreMi.classList.remove("oculto")
+      sobreMi.classList.remove("oculto");
     }
   })
 }
 
-mostrarSobreMi()
+mostrarSobreMi();
